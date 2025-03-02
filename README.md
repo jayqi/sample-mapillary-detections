@@ -32,3 +32,5 @@ This project was developed in association with [Civic Tech DC](https://www.civic
     source .venv/bin/activate
     pip install -e .
     ```
+
+3. Set up your Mapillary credentials. You will need to register an account with [Mapillary](https://www.mapillary.com/). You can find the "Client Token" on the [Developers dashboard](https://www.mapillary.com/dashboard/developers). Create a `.env` file from [`.env.example`](./.env.example) and set your token.

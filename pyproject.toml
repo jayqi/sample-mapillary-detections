@@ -8,11 +8,19 @@ authors = [
 ]
 requires-python = ">=3.12"
 dependencies = [
+    "python-dotenv",
     "geopandas",
+    "geopy",
     "httpx",
+    "loguru",
+    "mapbox-vector-tile",
     "matplotlib",
+    "pydantic",
     "shapely",
 ]
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [build-system]
 requires = ["hatchling"]
@@ -22,4 +30,22 @@ build-backend = "hatchling.build"
 dev = [
     "ipython",
     "ipykernel",
+    "ruff",
 ]
+
+[tool.ruff]
+line-length = 99
+src = ["src", "notebooks"]
+
+[tool.ruff.lint]
+select = [
+  "E", # Pyflakes
+  "F", # Pycodestyle
+  "I", # isort
+]
+unfixable = ["F"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["reprexlite"]
+known-third-party = ["IPython"]
+force-sort-within-sections = true

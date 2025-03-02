@@ -65,4 +65,4 @@ class MapillaryDetectionsSampler:
 
     def results_to_gdf(self):
         self.fetch()
-        return gpd.GeoDataFrame([result.to_row() for result in self.samples])
+        return gpd.GeoDataFrame([result.to_row_dict() for result in self.samples])
